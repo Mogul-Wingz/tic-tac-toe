@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# Tic Tac Toe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Tic Tac Toe game built with React and Vite featuring:
+- Matrix falling code background (in orange).
+- Confetti animation upon a win.
+- Custom game logic for displaying fire for X and ice for O.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repository:
+   ```sh
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd /C:/Users/jagge/Desktop/code/tic-tac-toe
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-## Expanding the ESLint configuration
+## Development
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Start the development server:
+```sh
+npm run dev
+```
+Open your browser at [http://localhost:3000](http://localhost:3000) (or the URL provided by Vite).
 
-- Configure the top-level `parserOptions` property like this:
+## Build
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+To build the project for production:
+```sh
+npm run build
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Project Structure
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **src/App.tsx**: Main game component.
+- **src/MatrixBackground.tsx**: Matrix falling code background.
+- **src/ConfettiBackground.tsx**: Confetti animation for wins.
+- **src/App.css**: Styles for the project.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Features
+
+- **Falling Matrix Code**: An animated orange matrix backdrop.
+- **Win Animations**: A confetti effect when a player wins.
+- **Dynamic Game Logic**: X displays fire and O displays ice based on user interactions.
+
+## License
+
+This project is open-source. Feel free to modify and share.
