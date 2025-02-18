@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 type Player = 'X' | 'O'
@@ -22,6 +22,15 @@ function calculateWinner(squares: BoardState): Player | null {
 function Square({ value, onSquareClick }: { value: Player | null, onSquareClick: () => void }) {
   const [fired, setFired] = useState(false)
   const [frozen, setFrozen] = useState(false)
+
+  // Added to show emoji immediately when value is set
+  useEffect(() => {
+    if (value === 'X' && !fired) {
+      setFired(true)
+    } else if (value === 'O' && !frozen) {
+      setFrozen(true)
+    }
+  }, [value])
 
   const handleClick = () => {
     if (value === 'X' && !fired) {
