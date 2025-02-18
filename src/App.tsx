@@ -20,9 +20,20 @@ function calculateWinner(squares: BoardState): Player | null {
 }
 
 function Square({ value, onSquareClick }: { value: Player | null, onSquareClick: () => void }) {
+  const [fired, setFired] = useState(false)
+
+  const handleClick = () => {
+    if (value === 'X' && !fired) {
+      setFired(true)
+    } else if (!value) {
+      onSquareClick()
+    }
+  }
+
+  const display = value === 'X' && fired ? '🔥' : value
   return (
-    <button className="square" onClick={onSquareClick}>
-      {value}
+    <button className="square" onClick={handleClick}>
+      {display}
     </button>
   )
 }
