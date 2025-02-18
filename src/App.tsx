@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import MatrixBackground from './MatrixBackground'
 
 type Player = 'X' | 'O'
 type BoardState = (Player | null)[]
@@ -77,15 +78,18 @@ export default function App() {
   }
 
   return (
-    <div className="game">
-      <h1>Tic Tac Toe</h1>
-      <div className="status">{status}</div>
-      <div className="board">
-        {squares.map((square, i) => (
-          <Square key={i} value={square} onSquareClick={() => handleClick(i)} />
-        ))}
+    <>
+      <MatrixBackground />
+      <div className="game">
+        <h1>Tic Tac Toe</h1>
+        <div className="status">{status}</div>
+        <div className="board">
+          {squares.map((square, i) => (
+            <Square key={i} value={square} onSquareClick={() => handleClick(i)} />
+          ))}
+        </div>
+        <button className="reset-button" onClick={handleReset}>Reset Game</button>
       </div>
-      <button className="reset-button" onClick={handleReset}>Reset Game</button>
-    </div>
+    </>
   )
 }
