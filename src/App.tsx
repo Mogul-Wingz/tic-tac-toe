@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import MatrixBackground from './MatrixBackground'
+import ConfettiBackground from './ConfettiBackground'
 
 type Player = 'X' | 'O'
 type BoardState = (Player | null)[]
@@ -80,6 +81,7 @@ export default function App() {
   return (
     <>
       <MatrixBackground />
+      {winner && <ConfettiBackground />}
       <div className="game">
         <h1>Tic Tac Toe</h1>
         <div className="status">{status}</div>
