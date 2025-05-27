@@ -32,7 +32,7 @@ function Square({ value, onSquareClick }: { value: Player | null, onSquareClick:
     } else if (value === 'O' && !frozen) {
       setFrozen(true)
     }
-  }, [value])
+  }, [value, fired, frozen])
 
   const handleClick = () => {
     if (value === 'X' && !fired) {

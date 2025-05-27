@@ -12,7 +12,17 @@ export default function ConfettiBackground() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    let particles: any[] = []
+    interface Particle {
+      x: number
+      y: number
+      r: number
+      color: string
+      tilt: number
+      tiltAngleIncremental: number
+      tiltAngle: number
+    }
+
+    let particles: Particle[] = []
     const colors = ['#FFC700', '#FF0000', '#2E3192', '#41BBC7', '#0F0', '#F0F']
     const particleCount = 150
 
